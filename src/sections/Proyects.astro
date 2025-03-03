@@ -4,213 +4,352 @@ import Section from "../components/Section.astro";
 import Arrow from "../icons/Arrow.astro";
 
 const proyects = [
-	{
-		thumbnail: "imgs/proyect1.webp",
-		title: "Culpa ullamco est id sunt.",
-		description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
-		link: "#",
-	},
-	{
-		thumbnail: "imgs/proyect1.webp",
-		title: "Culpa ullamco est id sunt.",
-		description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
-		link: "#",
-	},
-	{
-		thumbnail: "imgs/proyect1.webp",
-		title: "Culpa ullamco est id sunt.",
-		description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
-		link: "#",
-	},
-	{
-		thumbnail: "imgs/proyect1.webp",
-		title: "Culpa ullamco est id sunt.",
-		description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
-		link: "#",
-	},
-	{
-		thumbnail: "imgs/proyect1.webp",
-		title: "Culpa ullamco est id sunt.",
-		description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
-		link: "#",
-	},
+  {
+    thumbnail: "imgs/proyect1.webp",
+    title: "Culpa ullamco est id sunt.",
+    description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
+    link: "#",
+  },
+  {
+    thumbnail: "imgs/proyect1.webp",
+    title: "Culpa ullamco est id sunt.",
+    description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
+    link: "#",
+  },
+  {
+    thumbnail: "imgs/proyect1.webp",
+    title: "Culpa ullamco est id sunt.",
+    description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
+    link: "#",
+  },
+  {
+    thumbnail: "imgs/proyect1.webp",
+    title: "Culpa ullamco est id sunt.",
+    description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
+    link: "#",
+  },
+  {
+    thumbnail: "imgs/proyect1.webp",
+    title: "Culpa ullamco est id sunt.",
+    description: "Non officia ut irure aliqua nulla est elit reprehenderit eu.",
+    link: "#",
+  },
 ];
 
-const styleBox = 'rounded-lg shadow-md flex items-center justify-center relative overflow-hidden cursor-pointer group';
-const gradientBox = 'bg-gradient-to-t from-slate-900 to-slate-700';
-const borderBox = 'border-[3px] border-[#FFC86B]';
+const styleBox =
+  "rounded-lg shadow-md flex items-center justify-center relative overflow-hidden cursor-pointer group";
+const gradientBox = "bg-gradient-to-t from-slate-900 to-slate-700";
+const borderBox = "border-[3px] border-[#FFC86B]";
 ---
 
-<Section id="proyects" className=`bg-[#3D3E42] py-10 lg:py-0 lg:h-screen text-white overflow-hidden flex justify-center items-center`>
-	
-	<h2 class="text-center mb-6 md:mb-8 text-5xl">Proyectos</h2>
+<Section
+  id="proyects"
+  className=`bg-[#3D3E42] py-10 lg:py-0 lg:h-screen text-white overflow-hidden flex justify-center items-center`
+>
+  <h2 class="text-center mb-6 md:mb-8 text-5xl">Proyectos</h2>
 
-	<div class="flex h-[1000px] md:h-[600px] w-full items-center justify-center md:aspect-square">
-		<div class="grid h-full w-full gap-4 bg-[#34353A] p-4 rounded-lg shadow-md grid-cols-3 md:grid-cols-5 grid-rows-5 md:grid-rows-4">
-		  
-			<!-- Proyecto 1 -->
-			<div class=`col-span-3 row-span-1 md:col-span-2 md:row-span-4 ${styleBox} ${gradientBox}`>
-				<div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`></div>
-				<div class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"></div>
-		
-				<div class="absolute text-center md:text-left top-4 mx-4 text-white">
-					<h2 class="text-balance md:text-4xl font-bold">Seguimiento de pacientes</h2>
-					<p class="text-balance text-xs md:text-base mt-2 hidden md:inline-block">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deserunt, tenetur sequi nesciunt commodi veritatis eum sint cumque molestiae dolorum minus deleniti eaque optio culpa facere ratione placeat numquam earum!
-					</p>
-                    <p class="text-balance text-xs mt-2 md:hidden">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deserunt, tenetur sequi nesciunt.
-                    </p>
-				</div>
-		
-				<img
-					src="/imgs/pao_app_historial_cel.webp"
-					alt="Historial de la aplicación"
-					class="absolute md:-bottom-[14rem] right-4 w-[150%] md:w-2/4 rounded-lg object-cover group-hover:w-[52%] transition-all duration-300 ease-in-out hidden md:inline-block"
-				/>
-				
-				<div class="absolute bottom-4 md:left-0 flex flex-wrap gap-2 md:max-w-[12rem] justify-center">
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3">
-					  <img src="icons/flutter.svg" alt="Flutter logo" class="w-9 h-9 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-1">
-					  <img src="icons/dart.svg" alt="dart logo" class="w-9 h-9 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2">
-					  <img src="icons/cshard.svg" alt="C# logo" class="w-9 h-9 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2">
-					  <img src="icons/postgres.svg" alt="SQL logo" class="w-9 h-9 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md md:flex items-center justify-center p-2 hidden">
-					  <img src="icons/docker.svg" alt="React logo" class="w-9 h-9 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md md:flex items-center justify-center p-2 hidden">
-						<img src="icons/aws_black.svg" alt="React logo" class="w-9 h-9 object-contain" />
-					</div>
-				</div>
+  <div
+    class="flex h-[1000px] md:h-[600px] w-full items-center justify-center md:aspect-square"
+  >
+    <div
+      class="grid h-full w-full gap-4 bg-[#34353A] p-4 rounded-lg shadow-md grid-cols-3 md:grid-cols-5 grid-rows-5 md:grid-rows-4"
+    >
+      <!-- Proyecto 1 -->
+      <div
+        class=`col-span-3 row-span-1 md:col-span-2 md:row-span-4 ${styleBox} ${gradientBox}`
+      >
+        <div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`>
+        </div>
+        <div
+          class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"
+        >
+        </div>
 
-			</div>
-	  
-			<!-- Proyecto 2 -->
-			<div class={`col-span-3 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`}>
-				<div class={`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`}></div>
-				<div class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"></div>
-			
-				<div class="absolute text-center md:text-left top-6 text-white w-11/12">
-                    <h2 class="text-xl md:text-4xl font-bold">SmileToFit</h2>
-                    <p class="text-xs md:text-base mt-2 hidden md:inline-block">
-                        Aplicación web desarrollada para el seguimiento, control de salud y bienestar del cliente. Dashboard, administración de pedidos, armado de insumos y recetas, facturación y blog.
-                    </p>
-                    <p class="text-xs mt-2 md:hidden">
-                        App para el seguimiento de salud y bienestar. Incluye dashboard, pedidos, insumos, recetas y más.
-                    </p>
-                </div>
-				
-				<img
-					src="/imgs/smiletofit.webp"
-					alt="SmileTofit"
-					class="absolute md:-bottom-10 md:-left-20 w-[30%] md:w-[56%] rounded-lg object-cover group-hover:w-[60%] transition-all duration-300 ease-in-out hidden md:inline-block"
-				/>
-				
-				<div class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center">
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]">
-						<img src="icons/codeigniter.svg" alt="Codeigniter logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2 hidden md:flex">
-						<img src="icons/php_black.svg" alt="PHP logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-1">
-						<img src="icons/sql.svg" alt="SQL logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3">
-						<img src="icons/html.svg" alt="HTML logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3">
-						<img src="icons/css.svg" alt="CSS logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-				</div>
-			</div>
-		
-			<!-- Proyecto 3 -->
-			<div class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`>
-				<div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`></div>
-				<div class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"></div>
-		
-				<div class="absolute top-6 left-6 text-white">
-					<h2 class="text-balance md:text-2xl font-bold">RPA</h2>
-					<p class="text-xs md:text-sm mt-2">
-						Script para la obtención de polizas.
-					</p>
-				</div>
-		
-				<img
-					src="/imgs/rpa_proyect.webp"
-					alt="RPA image"
-					class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
-				/>
-				
-				<div class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center">
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]">
-						<img src="icons/python.svg" alt="Phyton logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-				</div>
-			</div>
-		
-			<!-- Proyecto 4 -->
-			<div class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`>
-				<div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`></div>
-				<div class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"></div>
-		
-				<div class="absolute top-6 left-6 text-white">
-					<h2 class="text-balance md:text-2xl font-bold">RPA</h2>
-					<p class="text-xs md:text-sm mt-2">
-						Script para la obtención de polizas.
-					</p>
-				</div>
-		
-				<img
-					src="/imgs/rpa_proyect.webp"
-					alt="RPA image"
-					class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
-				/>
+        <div class="absolute text-center md:text-left top-4 mx-4 text-white">
+          <h2 class="text-balance md:text-4xl font-bold">
+            Seguimiento de pacientes
+          </h2>
+          <p
+            class="text-balance text-xs md:text-base mt-2 hidden md:inline-block"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            deserunt, tenetur sequi nesciunt commodi veritatis eum sint cumque
+            molestiae dolorum minus deleniti eaque optio culpa facere ratione
+            placeat numquam earum!
+          </p>
+          <p class="text-balance text-xs mt-2 md:hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            deserunt, tenetur sequi nesciunt.
+          </p>
+        </div>
 
-				<div class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center">
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]">
-						<img src="icons/python.svg" alt="Phyton logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-				</div>
-			</div>
-		
-			<!-- Proyecto 5 -->
-			<div class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`>
-				<div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`></div>
-				<div class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"></div>
-		
-				<div class="absolute top-6 left-6 text-white">
-					<h2 class="text-balance md:text-2xl font-bold">RPA</h2>
-					<p class="text-xs md:text-sm mt-2">
-						Script para la obtención de polizas.
-					</p>
-				</div>
-		
-				<img
-					src="/imgs/rpa_proyect.webp"
-					alt="RPA image"
-					class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
-				/>
+        <img
+          src="/imgs/pao_app_historial_cel.webp"
+          alt="Historial de la aplicación"
+          class="absolute md:-bottom-[14rem] right-4 w-[150%] md:w-2/4 rounded-lg object-cover group-hover:w-[52%] transition-all duration-300 ease-in-out hidden md:inline-block"
+        />
 
-				<div class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center">
-					<div class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]">
-						<img src="icons/python.svg" alt="Phyton logo" class="w-9 h-9 md:w-10 md:h-10 object-contain" />
-					</div>
-				</div>
-			</div>			
-		</div>
-	</div>
-	  
+        <div
+          class="absolute bottom-4 md:left-0 flex flex-wrap gap-2 md:max-w-[12rem] justify-center"
+        >
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3"
+          >
+            <img
+              src="icons/flutter.svg"
+              alt="Flutter logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-1"
+          >
+            <img
+              src="icons/dart.svg"
+              alt="dart logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2"
+          >
+            <img
+              src="icons/cshard.svg"
+              alt="C# logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2"
+          >
+            <img
+              src="icons/postgres.svg"
+              alt="SQL logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md md:flex items-center justify-center p-2 hidden"
+          >
+            <img
+              src="icons/docker.svg"
+              alt="React logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md md:flex items-center justify-center p-2 hidden"
+          >
+            <img
+              src="icons/aws_black.svg"
+              alt="React logo"
+              class="w-9 h-9 object-contain"
+            />
+          </div>
+        </div>
+      </div>
 
-	<!-- <div class="flex h-full w-full items-center justify-center">
+      <!-- Proyecto 2 -->
+      <div
+        class={`col-span-3 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`}
+      >
+        <div class={`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`}>
+        </div>
+        <div
+          class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"
+        >
+        </div>
+
+        <div class="absolute text-center md:text-left top-6 text-white w-11/12">
+          <h2 class="text-xl md:text-4xl font-bold">SmileToFit</h2>
+          <p class="text-xs md:text-base mt-2 hidden md:inline-block">
+            Aplicación web desarrollada para el seguimiento, control de salud y
+            bienestar del cliente. Dashboard, administración de pedidos, armado
+            de insumos y recetas, facturación y blog.
+          </p>
+          <p class="text-xs mt-2 md:hidden">
+            App para el seguimiento de salud y bienestar. Incluye dashboard,
+            pedidos, insumos, recetas y más.
+          </p>
+        </div>
+
+        <img
+          src="/imgs/smiletofit.webp"
+          alt="SmileTofit"
+          class="absolute md:-bottom-10 md:-left-20 w-[30%] md:w-[56%] rounded-lg object-cover group-hover:w-[60%] transition-all duration-300 ease-in-out hidden md:inline-block"
+        />
+
+        <div
+          class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center"
+        >
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]"
+          >
+            <img
+              src="icons/codeigniter.svg"
+              alt="Codeigniter logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-2 hidden md:flex"
+          >
+            <img
+              src="icons/php_black.svg"
+              alt="PHP logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-1"
+          >
+            <img
+              src="icons/sql.svg"
+              alt="SQL logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3"
+          >
+            <img
+              src="icons/html.svg"
+              alt="HTML logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-3"
+          >
+            <img
+              src="icons/css.svg"
+              alt="CSS logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div
+        class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`
+      >
+        <div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`>
+        </div>
+        <div
+          class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"
+        >
+        </div>
+
+        <div class="absolute top-6 left-6 text-white">
+          <h2 class="text-balance md:text-2xl font-bold">RPA</h2>
+          <p class="text-xs md:text-sm mt-2">
+            Script para la obtención de polizas.
+          </p>
+        </div>
+
+        <img
+          src="/imgs/rpa_proyect.webp"
+          alt="RPA image"
+          class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
+        />
+
+        <div
+          class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center"
+        >
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]"
+          >
+            <img
+              src="icons/python.svg"
+              alt="Phyton logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div
+        class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`
+      >
+        <div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`>
+        </div>
+        <div
+          class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"
+        >
+        </div>
+
+        <div class="absolute top-6 left-6 text-white">
+          <h2 class="text-balance md:text-2xl font-bold">RPA</h2>
+          <p class="text-xs md:text-sm mt-2">
+            Script para la obtención de polizas.
+          </p>
+        </div>
+
+        <img
+          src="/imgs/rpa_proyect.webp"
+          alt="RPA image"
+          class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
+        />
+
+        <div
+          class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center"
+        >
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]"
+          >
+            <img
+              src="icons/python.svg"
+              alt="Phyton logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 5 -->
+      <div
+        class=`col-span-3 md:col-span-1 row-span-1 md:row-span-2 ${styleBox} ${gradientBox}`
+      >
+        <div class=`absolute z-10 inset-0 rounded-lg opacity-70 ${borderBox}`>
+        </div>
+        <div
+          class="absolute z-10 inset-0 rounded-lg border-[4px] border-[#FFC86B] opacity-50 blur-sm"
+        >
+        </div>
+
+        <div class="absolute top-6 left-6 text-white">
+          <h2 class="text-balance md:text-2xl font-bold">RPA</h2>
+          <p class="text-xs md:text-sm mt-2">
+            Script para la obtención de polizas.
+          </p>
+        </div>
+
+        <img
+          src="/imgs/rpa_proyect.webp"
+          alt="RPA image"
+          class="absolute md:-bottom-36 w-[150%] md:w-10/12 rounded-lg object-cover group-hover:w-[88%] transition-all duration-300 ease-in-out hidden md:inline-block"
+        />
+
+        <div
+          class="absolute bottom-4 md:right-6 flex flex-wrap gap-2 justify-center"
+        >
+          <div
+            class="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center p-[10px]"
+          >
+            <img
+              src="icons/python.svg"
+              alt="Phyton logo"
+              class="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="flex h-full w-full items-center justify-center">
 		
 	</div>
 
