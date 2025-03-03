@@ -1,0 +1,54 @@
+---
+import Section from "../components/Section.astro";
+import Skill from "../components/Skill.astro";
+---
+
+<Section className=`bg-[#34353A] py-12 text-white overflow-x-hidden `>
+	<h1 class="text-4xl text-center md:text-6xl mb-4">Acerca de mí</h1>
+	<div class="flex">
+		<div class="hidden md:block w-24 h-2 bg-[#FFC86B] mt-4 mr-4"></div>
+		<div class="flex-1">
+			<p class="text-xl text-balance md:text-4xl">
+				Lorem ipsum dolor sit amet consectetur. Ut duis nulla elementum
+				viverra dignissim odio. Tortor cursus donec leo diam. Volutpat
+				senectus ut imperdiet accumsan egestas. Morbi turpis hac
+				venenatis in pellentesque pellentesque. <span class="text-[#FFC86B]">Facilisis blandit neque condimentum ipsum semper netus.</span>
+				Donec viverra massa nec lorem tristique quisque lectus odio. Tincidunt
+				sagittis hac venenatis phasellus risus lacus laoreet sem.
+			</p>
+		</div>
+	</div>
+	<h1 class="text-4xl md:text-6xl text-center mt-16 mb-10">Habilidades</h1>
+	<div class="hidden md:grid grid-cols-12 grid-rows-3">
+		<Skill img="icons/cshard.svg" technology="C#" classSkill="row-start-1 col-start-1 row-end-2 col-end-3" />
+		<Skill img="icons/python.svg" technology="Python" classSkill="row-start-1 col-start-3 row-end-2 col-end-5" />
+		<Skill img="icons/sql.svg" technology="SQL" classSkill="row-start-1 col-start-5 row-end-2 col-end-7" />
+		<Skill img="icons/mongodb.svg" technology="MongoDB" classSkill="row-start-1 col-start-7 row-end-2 col-end-9" />
+		<Skill img="icons/php.svg" technology="PHP" classSkill="row-start-1 col-start-9 row-end-2 col-end-11" />
+		<Skill img="icons/vue.svg" technology="Vue" classSkill="row-start-1 col-start-11 row-end-2 col-end-13" />
+		<Skill img="icons/github.svg" technology="GitHub" classSkill="row-start-2 col-start-2 row-end-3 col-end-4" />
+		<Skill img="icons/js.svg" technology="JS" classSkill="row-start-2 col-start-4 row-end-3 col-end-6" classTechnology="text-4xl" />
+		<Skill img="icons/aws.svg" technology="AWS" classSkill="row-start-2 col-start-6 row-end-3 col-end-8" />
+		<Skill img="icons/flutter.svg" technology="Flutter" classSkill="row-start-2 col-start-8 row-end-3 col-end-10" />
+		<Skill img="icons/ubuntu.svg" technology="Ubuntu" classSkill="row-start-2 col-start-10 row-end-3 col-end-12" />
+		<Skill img="icons/html.svg" technology="HTML & CSS" classSkill="row-start-3 col-start-6 row-end-4 col-end-8" classTechnology="text-xl" />
+	</div>
+	<div class="flex gap-4 md:hidden">
+		<div class="w-1/2">
+			<Skill img="icons/cshard.svg" technology="C#" classSkill="w-full !mb-4" />
+			<Skill img="icons/python.svg" technology="Python" classSkill="w-full !mb-4" />
+			<Skill img="icons/sql.svg" technology="SQL" classSkill="w-full !mb-4" />
+			<Skill img="icons/mongodb.svg" technology="MongoDB" classSkill="w-full !mb-4" />
+			<Skill img="icons/php.svg" technology="PHP" classSkill="w-full !mb-4" />
+			<Skill img="icons/vue.svg" technology="Vue" classSkill="w-full !mb-4" />
+		</div>
+		<div class="w-1/2">
+			<Skill img="icons/github.svg" technology="GitHub" classSkill="w-full !mb-4" />
+			<Skill img="icons/js.svg" technology="JS" classSkill="w-full !mb-4" classTechnology="text-4xl" />
+			<Skill img="icons/aws.svg" technology="AWS" classSkill="w-full !mb-4" />
+			<Skill img="icons/flutter.svg" technology="Flutter" classSkill="w-full !mb-4" />
+			<Skill img="icons/ubuntu.svg" technology="Ubuntu" classSkill="w-full !mb-4" />
+			<Skill img="icons/html.svg" technology="HTML & CSS" classSkill="w-full !mb-4" classTechnology="text-xl" />
+		</div>
+	</div>
+</Section>

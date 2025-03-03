@@ -1,0 +1,35 @@
+---
+interface Props {
+	width?: string;
+	height?: string;
+	strokeWidth?: string;
+}
+
+const {width = 24, height = 24, strokeWidth = 1} = Astro.props
+---
+<svg
+	width={width}
+	height={height}
+	stroke-width={strokeWidth}
+	viewBox="0 0 68 69"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<g clip-path="url(#clip0_30_55)">
+		<path
+			fill-rule="evenodd"
+			clip-rule="evenodd"
+			d="M25.5845 19.7487L23.3345 19.7487L23.3345 24.2487L25.5845 24.2487L42.4263 24.2488L19.7509 46.9242L18.1599 48.5152L21.3419 51.6972L22.9329 50.1062L45.6083 27.4307L45.6084 44.2726L45.6084 46.5225L50.1084 46.5226L50.1083 44.2725L50.1085 22.7486C50.1084 21.0918 48.7653 19.7486 47.1085 19.7486L25.5845 19.7487Z"
+			fill="#34353A"
+			stroke="#34353A"></path>
+	</g>
+	<defs>
+		<clipPath id="clip0_30_55">
+			<rect
+				width="48"
+				height="48"
+				fill="white"
+				transform="translate(0 34.5979) rotate(-45)"></rect>
+		</clipPath>
+	</defs>
+</svg>

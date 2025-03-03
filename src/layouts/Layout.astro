@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    /* --color-primary: #ddd; */
+  }
+  html {
+    font-family: roboto, ubuntu, system-ui, sans-serif;
+    scrollbar-gutter: stable;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    @media (hover: hover) {
+      ::-webkit-scrollbar {
+        width: 10px;
+        /* border-radius: 10px; */
+        background-color: #34353a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #eceff1;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background-color: #eceff1;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--background-image);
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: var(--background-image);
+      }
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: #eceff1;
+      scrollbar-width: thin;
+    }
+  }
+</style>

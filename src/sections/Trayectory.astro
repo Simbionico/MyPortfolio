@@ -1,0 +1,132 @@
+---
+import Section from "../components/Section.astro";
+// @ts-ignore
+import { calculateDate } from "calculating-date";
+
+const currentDate = new Date().toISOString().split("T")[0];
+const dateDiffGP = calculateDate("2022-08-29", currentDate)[0];
+let gpYear = dateDiffGP["yearDiff"] as string;
+gpYear = gpYear.replace(
+  " Year",
+  gpYear.startsWith("1") && !gpYear.startsWith("11") ? " Año" : " Años"
+);
+let gpMonth = dateDiffGP["monthDiff"] as string;
+gpMonth = gpMonth.replace(
+  " Month",
+  gpMonth.startsWith("1") && !gpMonth.startsWith("11") ? " Mes" : " Meses"
+);
+
+const dateDiffTotal = calculateDate("2017-01-15", currentDate)[0];
+let totalYears = dateDiffTotal["yearDiff"] as string;
+totalYears = totalYears.replace(
+  " Year",
+  totalYears.startsWith("1") && !totalYears.startsWith("11") ? " Año" : " Años"
+);
+
+let totalMonths = dateDiffTotal["monthDiff"] as string;
+totalMonths = totalMonths.replace(
+  " Month",
+  totalMonths.startsWith("1") && !totalMonths.startsWith("11")
+    ? " Mes"
+    : " Meses"
+);
+
+const jobs = [
+  {
+    años: "2022 - ",
+    time: `${gpYear} ${gpMonth}`,
+    company: "Garantiplus",
+    position: "Desarrollador full stack",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum Quisquam, quidem.",
+  },
+  {
+    años: "2018 - 2022",
+    time: "4 años y 7 meses",
+    company: "Krom aduanal",
+    position: "Desarrollador senior",
+    description:
+      "Realice desarrollo de aplicaciones estandarizadas de escritorio y web, en lenguaje VB.net, aplicando conocimiento de HTML5, CSS, JS,  JQuery, de manera estandarizada",
+  },
+  {
+    años: "2017 - 2018",
+    time: "1 año",
+    company: "SH&web",
+    position: "Desarrollador junior",
+    description:
+      "Me desempeñe como desarrollador de paneles de administración para sitios web y creación deservicios web en PHP.",
+  },
+];
+---
+
+<Section id="trajectory" className="bg-[#3D3E42] py-12 text-white">
+  <h2 class="text-center mb-12 text-5xl">Trayectoria</h2>
+  {
+    jobs.map((job) => (
+      // jobs.indexOf(job) === jobs.length - 1 ? '' : 'mb-6
+      <div
+        class:list={[
+          "job items-center",
+          jobs.indexOf(job) != jobs.length - 1 && "mb-0",
+          "md:mb-6",
+        ]}
+      >
+        <div class="[grid-area:time]">
+          <p class="text-sm md:text-xl">{job.años}</p>
+          <p class="text-sm md:text-base">{job.time}</p>
+        </div>
+        <p class="[grid-area:company] text-xl h-14 md:h-0 flex items-center">
+          {job.company}
+        </p>
+        <p class="[grid-area:position] text-xl">{job.position}</p>
+        <div class="[grid-area:slice] w-4/5 h-1 mx-auto my-6 md:w-1 md:h-14 md:mx-4 md:my-auto bg-white rounded" />
+        <div class="[grid-area:description]">
+          <p class="text-balance">{job.description}</p>
+        </div>
+      </div>
+    ))
+  }
+
+  <!-- <div class="job items-center">
+		<div class="[grid-area:time]">
+			<p class="text-xl">2018 - 2022</p>
+			<p class="text-base">1 año</p>
+		</div>
+		<p class="[grid-area:company] text-xl">Dolore esse</p>
+		<p class="[grid-area:position] text-xl">Dolore esse aliquip non dolore</p>
+		<div class="[grid-area:slice] w-4/5 h-1 mx-auto my-2 md:w-1 md:h-14 md:mx-4 md:my-auto  bg-white rounded"></div>
+		<div class="[grid-area:description]">
+			<p class="text-balance">Esse quis laborum ipsum veniam nisi incididunt ipsum minim officia laboris aute amet. Dolore consequat eiusmod ea Lorem non ullamco velit ad cupidatat cillum. Eu incididunt duis ex ea qui proident aute.</p>
+		</div>
+	</div> -->
+
+  <div class="text-end mt-3">
+    <p class="text-2xl mr-12">Experiencia de trabajo</p>
+    <p class="text-4xl mt-1">{totalYears} {totalMonths}</p>
+  </div>
+</Section>
+
+<style>
+  .job {
+    display: grid;
+    grid-template-columns: 10% 20% 20% auto 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "time company position slice description";
+    gap: 8px;
+  }
+
+  @media (max-width: 776px) {
+    .job {
+      grid-template-columns: 1fr 30%;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas:
+        "company time"
+        "position time"
+        "description description"
+        "slice slice";
+      && .\[grid-area\:time\] {
+        align-self: start;
+      }
+    }
+  }
+</style>

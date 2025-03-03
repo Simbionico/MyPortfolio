@@ -1,0 +1,28 @@
+---
+import { isClassStaticBlockDeclaration } from 'typescript';
+
+interface Props {
+	img: string;
+	technology: string;
+	body?: Array<string>;
+	classSkill?: string;
+	classTechnology?: string;
+}
+const { img, technology, body, classSkill, classTechnology } = Astro.props;
+---
+<div class=`${classSkill} mb-8 size-[170px] bg-[#5C5D60] rounded-2xl flex items-center flex-col shadow-sm relative overflow-hidden mx-auto`>
+	<div class="size-[50px] my-5"><img src={img} alt={technology}></div>
+	<p class=`${classTechnology} text-2xl`>{technology}</p>
+	<div class:list={['transition-all duration-300 ease-in-out cursor-pointer size-[170px] bg-[#3D3E42] opacity-90 absolute top-[80%] flex flex-col', {'hover:top-0 hover:rounded-2xl': body}]}>
+		<div class="h-2 mt-1"><div class="mx-auto w-14 h-1 bg-[#FFC86B] rounded-md"></div></div>
+		{
+			body &&
+				<p class="text-center text-base">Desarrollos</p>
+				<ul class="py-1 px-3 overflow-y-scroll">
+					{
+						body.map(text => <li class="text-sm mb-2">{text}</li>)
+					}
+				</ul>
+		}
+	</div>
+</div>

@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
+import Home from "../sections/Home.astro";
+import About from "../sections/About.astro";
+import Proyects from "../sections/Proyects.astro";
+import Trayectory from "../sections/Trayectory.astro";
+import Contact from "../sections/Contact.astro";
+import ThankYou from "src/sections/ThankYou.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="w-full relative">
+    <Menu />
+    <Home />
+    <Proyects />
+    <About />
+    <Trayectory />
+    <Contact />
+    <div class="w-full h-3 bg-[#FFC86B] absolute z-10 rounded-md"></div>
+    <ThankYou />
+  </main>
+</Layout>
