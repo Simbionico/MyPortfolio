@@ -6,7 +6,7 @@ import MapPinIcon from "@components/icons/MapPinIcon.astro";
 
 const breakLIne = "flex-1 h-2 bg-[#FFC86B] rounded-md";
 const contactInfoClass =
-  "w-[550px] h-[102px] px-4 py-2 text-4xl flex justify-center items-center border-2 border-[#FFC86B] rounded-[16px] mb-[40px] md:mb-[80px]";
+  "w-[400px] md:w-[550px] h-[80px] md:h-[102px] px-4 py-2 text-base sm:text-xl md:text-4xl flex justify-center items-center border-2 border-[#FFC86B] rounded-[16px] mb-[40px] md:mb-[80px]";
 ---
 
 <Section id="contact" className="bg-[#34353A] relative">
@@ -14,19 +14,25 @@ const contactInfoClass =
     class="w-full flex justify-center items-center absolute -top-[1.85rem] left-1/2 -translate-x-1/2"
   >
     <div class={`${breakLIne} mr-4`}></div>
-    <p class="text-6xl text-white">Contactame</p>
+    <p class="text-4xl md:text-6xl text-white">Contactame</p>
     <div class={`${breakLIne} ml-4`}></div>
   </div>
-  <div class="w-full py-28 flex justify-center items-center">
+  <div class="w-full py-14 md:py-28 flex justify-center items-center">
     <div class="w-full flex justify-around flex-wrap">
       <div class={`${contactInfoClass} text-[#FFC86B]`}>
-        <MailIcon class="w-12 h-12 text-white mr-2" />charlie.cs93@gmail.com
+        <MailIcon
+          class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
+        />charlie.cs93@gmail.com
       </div>
       <div class={`${contactInfoClass} text-[#FFC86B]`}>
-        <PhoneIcon class="w-12 h-12 text-white mr-2" />+(52) 2292646384
+        <PhoneIcon
+          class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
+        />+(52) 2292646384
       </div>
       <div class={`${contactInfoClass} text-[#FFC86B] !mb-0`}>
-        <MapPinIcon class="w-12 h-12 text-white mr-2" />Veracruz, Ver. (México)
+        <MapPinIcon
+          class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
+        />Veracruz, Ver. (México)
       </div>
     </div>
   </div>
