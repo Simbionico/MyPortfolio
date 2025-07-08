@@ -9,7 +9,8 @@ const contactInfoClass =
   "w-[400px] md:w-[550px] h-[80px] md:h-[102px] px-4 py-2 text-base sm:text-xl md:text-4xl flex justify-center items-center border-2 border-[#FFC86B] rounded-[16px] mb-[40px] md:mb-[80px]";
 ---
 
-<Section id="contact" className="bg-[#34353A] relative">
+<!-- bg-[#34353A] -->
+<Section id="contact" className=" relative">
   <div
     class="w-full flex justify-center items-center absolute -top-[1.85rem] left-1/2 -translate-x-1/2"
   >
@@ -24,16 +25,21 @@ const contactInfoClass =
           class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
         />charlie.cs93@gmail.com
       </div>
-      <div class={`${contactInfoClass} text-[#FFC86B]`}>
+      <a href="tel:2292646384" class={`${contactInfoClass} text-[#FFC86B]`}>
         <PhoneIcon
           class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
         />+(52) 2292646384
-      </div>
-      <div class={`${contactInfoClass} text-[#FFC86B] !mb-0`}>
+      </a>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=veracruz+ver"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`${contactInfoClass} text-[#FFC86B] !mb-0`}
+      >
         <MapPinIcon
           class="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white mr-2"
         />Veracruz, Ver. (México)
-      </div>
+      </a>
     </div>
   </div>
 </Section>

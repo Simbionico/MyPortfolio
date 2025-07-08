@@ -1,41 +1,37 @@
 ---
-const {id} = Astro.props;
+const { id, stroke = "white" } = Astro.props;
 ---
-<svg
-	{id}
-	viewBox="0 0 68 68"
-	fill="none"
-	xmlns="http://www.w3.org/2000/svg"
->
-	<g clip-path="url(#clip0_12_73)">
-		<path
-			d="M39.6667 8.5V19.8333C39.6667 20.5848 39.9652 21.3054 40.4966 21.8368C41.0279 22.3682 41.7486 22.6667 42.5 22.6667H53.8334"
-			stroke="white"
-			stroke-width="4"
-			stroke-linecap="round"
-			stroke-linejoin="round"></path>
-		<path
-			d="M48.1667 59.5H19.8334C18.3305 59.5 16.8891 58.903 15.8264 57.8403C14.7637 56.7776 14.1667 55.3362 14.1667 53.8333V14.1667C14.1667 12.6638 14.7637 11.2224 15.8264 10.1597C16.8891 9.09702 18.3305 8.5 19.8334 8.5H39.6667L53.8334 22.6667V53.8333C53.8334 55.3362 53.2363 56.7776 52.1736 57.8403C51.1109 58.903 49.6696 59.5 48.1667 59.5Z"
-			stroke="white"
-			stroke-width="4"
-			stroke-linecap="round"
-			stroke-linejoin="round"></path>
-		<path
-			d="M34 48.1667V31.1667"
-			stroke="white"
-			stroke-width="4"
-			stroke-linecap="round"
-			stroke-linejoin="round"></path>
-		<path
-			d="M26.9167 41.0833L34 48.1666L41.0834 41.0833"
-			stroke="white"
-			stroke-width="4"
-			stroke-linecap="round"
-			stroke-linejoin="round"></path>
-	</g>
-	<defs>
-		<clipPath id="clip0_12_73">
-			<rect width="68" height="68" fill="white"></rect>
-		</clipPath>
-	</defs>
+
+<svg {id} viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_12_73)">
+    <path
+      d="M39.6667 8.5V19.8333C39.6667 20.5848 39.9652 21.3054 40.4966 21.8368C41.0279 22.3682 41.7486 22.6667 42.5 22.6667H53.8334"
+      stroke={stroke}
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+    <path
+      d="M48.1667 59.5H19.8334C18.3305 59.5 16.8891 58.903 15.8264 57.8403C14.7637 56.7776 14.1667 55.3362 14.1667 53.8333V14.1667C14.1667 12.6638 14.7637 11.2224 15.8264 10.1597C16.8891 9.09702 18.3305 8.5 19.8334 8.5H39.6667L53.8334 22.6667V53.8333C53.8334 55.3362 53.2363 56.7776 52.1736 57.8403C51.1109 58.903 49.6696 59.5 48.1667 59.5Z"
+      stroke={stroke}
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+    <path
+      d="M34 48.1667V31.1667"
+      stroke={stroke}
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+    <path
+      d="M26.9167 41.0833L34 48.1666L41.0834 41.0833"
+      stroke={stroke}
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+  </g>
+  <defs>
+    <clipPath id="clip0_12_73">
+      <rect width="68" height="68" fill="white"></rect>
+    </clipPath>
+  </defs>
 </svg>

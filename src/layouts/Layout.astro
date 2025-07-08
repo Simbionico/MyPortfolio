@@ -7,10 +7,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="es" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Portafolio de Carlos Castellanos desarrollador full stack con experiencia en frontend y backend."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -23,6 +26,12 @@ const { title } = Astro.props;
     />
   </head>
   <body class="overflow-x-hidden">
+    <div class="fixed inset-0 w-full h-full">
+      <video playsinline autoplay muted loop class="w-full h-full object-cover">
+        <source src="/fondo gris.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black opacity-75"></div>
+    </div>
     <slot />
   </body>
 </html>
