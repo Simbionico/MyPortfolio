@@ -6,19 +6,130 @@ import Skill from "../components/Skill.astro";
 <!-- bg-[#34353A] -->
 <Section className=` py-12 text-white overflow-x-hidden `>
   <h1 class="text-4xl text-center md:text-6xl mb-4">Acerca de mí</h1>
-  <div class="flex">
-    <div class="hidden md:block w-24 h-2 bg-[#FFC86B] mt-4 mr-4"></div>
-    <div class="flex-1">
-      <p class="text-xl text-balance md:text-4xl">
-        Lorem ipsum dolor sit amet consectetur. Ut duis nulla elementum viverra
-        dignissim odio. Tortor cursus donec leo diam. Volutpat senectus ut
-        imperdiet accumsan egestas. Morbi turpis hac venenatis in pellentesque
-        pellentesque. <span class="text-[#FFC86B]"
-          >Facilisis blandit neque condimentum ipsum semper netus.</span
-        >
-        Donec viverra massa nec lorem tristique quisque lectus odio. Tincidunt sagittis
-        hac venenatis phasellus risus lacus laoreet sem.
-      </p>
+  <div class="max-w-6xl mx-auto">
+    <!-- Card principal con mejor diseño -->
+    <div
+      class="bg-gradient-to-br from-gray-800/50 to-gray-900/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700/30 shadow-2xl"
+    >
+      <div class="flex flex-col lg:flex-row items-start gap-8">
+        <!-- Elemento decorativo lateral -->
+        <div class="hidden lg:flex flex-col items-center">
+          <div
+            class="w-1 h-16 bg-gradient-to-b from-[#FFC86B] to-yellow-400 rounded-full"
+          >
+          </div>
+          <div
+            class="w-3 h-3 bg-[#FFC86B] rounded-full my-2 shadow-lg shadow-[#FFC86B]/50"
+          >
+          </div>
+          <div
+            class="w-1 h-16 bg-gradient-to-b from-yellow-400 to-transparent rounded-full"
+          >
+          </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 space-y-6">
+          <!-- Introducción destacada -->
+          <div
+            class="border-l-4 border-[#FFC86B] pl-6 bg-gradient-to-r from-[#FFC86B]/10 to-transparent rounded-r-lg py-4"
+          >
+            <h2 class="text-2xl md:text-3xl font-bold text-[#FFC86B] mb-3">
+              ¡Hola! Soy Carlos Castellanos
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+              Desarrollador full stack con más de 8 años de experiencia
+              construyendo soluciones digitales robustas y escalables.
+            </p>
+          </div>
+
+          <!-- Grid de características -->
+          <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div
+              class="group bg-gray-700/20 hover:bg-gray-700/30 rounded-xl p-6 border border-gray-600/20 hover:border-[#FFC86B]/30 transition-all duration-300"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-2 h-2 bg-[#FFC86B] rounded-full mt-2 flex-shrink-0 group-hover:shadow-lg group-hover:shadow-[#FFC86B]/50 transition-all duration-300"
+                >
+                </div>
+                <div>
+                  <h3 class="text-[#FFC86B] font-semibold mb-2 text-lg">
+                    Mi día a día
+                  </h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    Transcurre entre .NET Core, Python, Docker y AWS, donde
+                    diseño APIs, automatizo procesos con RPA y resuelvo bugs
+                    como si fueran acertijos.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-gray-700/20 hover:bg-gray-700/30 rounded-xl p-6 border border-gray-600/20 hover:border-[#FFC86B]/30 transition-all duration-300"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-2 h-2 bg-[#FFC86B] rounded-full mt-2 flex-shrink-0 group-hover:shadow-lg group-hover:shadow-[#FFC86B]/50 transition-all duration-300"
+                >
+                </div>
+                <div>
+                  <h3 class="text-[#FFC86B] font-semibold mb-2 text-lg">
+                    Mi fortaleza
+                  </h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    Aunque me gusta darle vida al frontend, mi fortaleza está
+                    del lado del backend, donde me enfoco en la arquitectura, el
+                    rendimiento y la estabilidad del sistema.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-gray-700/20 hover:bg-gray-700/30 rounded-xl p-6 border border-gray-600/20 hover:border-[#FFC86B]/30 transition-all duration-300"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-2 h-2 bg-[#FFC86B] rounded-full mt-2 flex-shrink-0 group-hover:shadow-lg group-hover:shadow-[#FFC86B]/50 transition-all duration-300"
+                >
+                </div>
+                <div>
+                  <h3 class="text-[#FFC86B] font-semibold mb-2 text-lg">
+                    Mi pasión
+                  </h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    Me apasiona escribir código limpio, documentado y funcional.
+                    Soy autodidacta por naturaleza, fan de las buenas prácticas,
+                    y siempre explorando nuevas tecnologías.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-gray-700/20 hover:bg-gray-700/30 rounded-xl p-6 border border-gray-600/20 hover:border-[#FFC86B]/30 transition-all duration-300"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-2 h-2 bg-[#FFC86B] rounded-full mt-2 flex-shrink-0 group-hover:shadow-lg group-hover:shadow-[#FFC86B]/50 transition-all duration-300"
+                >
+                </div>
+                <div>
+                  <h3 class="text-[#FFC86B] font-semibold mb-2 text-lg">
+                    Mi enfoque
+                  </h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    Más que desarrollar software, creo experiencias y soluciones
+                    que realmente funcionan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <h1 class="text-4xl md:text-6xl text-center mt-16 mb-10">Habilidades</h1>

@@ -33,12 +33,12 @@ totalMonths = totalMonths.replace(
 
 const jobs = [
   {
-    años: "2022 - ",
+    años: "2022 - Actual",
     time: `${gpYear} ${gpMonth}`,
     company: "Garantiplus",
     position: "Desarrollador full stack",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum Quisquam, quidem.",
+      "Análisis y desarrollo de funcionalidades en .NET Core C#, gestión y mantenimiento de arquitectura. Conocimiento base en VueJs, Python y Docker. Desarrollo de RPAs en Python. Manejo de AWS y servicios como ec2, rout53, s3, lambda y otros. Presentación de avances usando scrum.",
   },
   {
     años: "2018 - 2022",
@@ -46,7 +46,7 @@ const jobs = [
     company: "Krom aduanal",
     position: "Desarrollador senior",
     description:
-      "Realice desarrollo de aplicaciones estandarizadas de escritorio y web, en lenguaje VB.net, aplicando conocimiento de HTML5, CSS, JS,  JQuery, de manera estandarizada",
+      "Desarrollo de aplicaciones de escritorio y web en VB.NET y ASP.X. Conocimiento de HTML5, CSS, JavaScript, jQuery. Manejo avanzado de SQL Server, uso de MySQL y MongoDB. Desarrollo de aplicaciones de escritorio en C# con Windows Forms. Gestión de proyectos: entrevistas, diagramas (BPMN, ER, casos), diseño. Reuniones y negociaciones con clientes. Generación y envío de reportes estándar y personalizados.",
   },
   {
     años: "2017 - 2018",
@@ -54,80 +54,99 @@ const jobs = [
     company: "SH&web",
     position: "Desarrollador junior",
     description:
-      "Me desempeñe como desarrollador de paneles de administración para sitios web y creación deservicios web en PHP.",
+      "Desarrollador de paneles de administración y creación de servicios web en PHP.",
   },
 ];
 ---
 
 <!-- bg-[#3D3E42] -->
-<Section id="trajectory" className=" py-12 text-white">
-  <h2 class="text-center mb-12 text-5xl">Trayectoria</h2>
-  {
-    jobs.map((job) => (
-      // jobs.indexOf(job) === jobs.length - 1 ? '' : 'mb-6
-      <div
-        class:list={[
-          "job items-center",
-          jobs.indexOf(job) != jobs.length - 1 && "mb-0",
-          "md:mb-6",
-        ]}
-      >
-        <div class="[grid-area:time]">
-          <p class="text-sm md:text-xl">{job.años}</p>
-          <p class="text-sm md:text-base">{job.time}</p>
+<Section id="trajectory" className="py-16 text-white">
+  <!-- Header Section -->
+  <div class="text-center mb-16">
+    <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FFC86B] to-yellow-300 bg-clip-text text-transparent">
+      Trayectoria
+    </h2>
+    <div class="w-24 h-1 bg-gradient-to-r from-[#FFC86B] to-yellow-300 mx-auto rounded-full"></div>
+  </div>
+
+  <!-- Timeline Container -->
+  <div class="max-w-6xl mx-auto relative">
+    <!-- Línea vertical principal (desktop) -->
+    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#FFC86B] via-yellow-400 to-[#FFC86B] h-full rounded-full shadow-lg shadow-[#FFC86B]/30"></div>
+    
+    {
+      jobs.map((job, index) => (
+        <div class={`relative mb-12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
+          <!-- Contenedor principal -->
+          <div class={`flex flex-col md:flex-row items-center gap-6 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+            
+            <!-- Indicador de tiempo (círculo) -->
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#FFC86B] rounded-full border-4 border-gray-900 shadow-lg shadow-[#FFC86B]/50 z-10">
+              <div class="w-2 h-2 bg-white rounded-full m-auto animate-pulse"></div>
+            </div>
+            
+            <!-- Card de trabajo -->
+            <div class={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
+              <div class="group bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/30 shadow-2xl hover:shadow-[#FFC86B]/20 transition-all duration-300 hover:scale-105">
+                
+                <!-- Header del trabajo -->
+                <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                  <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[#FFC86B] mb-2 group-hover:text-yellow-300 transition-colors duration-300">
+                      {job.company}
+                    </h3>
+                    <p class="text-lg md:text-xl text-gray-300 font-semibold mb-2">
+                      {job.position}
+                    </p>
+                  </div>
+                  
+                  <!-- Fecha en badge -->
+                  <div class="bg-[#FFC86B]/10 border border-[#FFC86B]/30 rounded-xl p-3 text-center min-w-fit">
+                    <p class="text-[#FFC86B] font-bold text-sm md:text-base whitespace-nowrap">
+                      {job.años}
+                    </p>
+                    <p class="text-yellow-300 text-xs md:text-sm">
+                      {job.time}
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Separador decorativo -->
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-[#FFC86B]/50 to-transparent mb-4"></div>
+                
+                <!-- Descripción -->
+                <div class="text-gray-300 leading-relaxed">
+                  <p class="text-sm md:text-base">
+                    {job.description}
+                  </p>
+                </div>
+                
+                <!-- Elemento decorativo inferior -->
+                <div class="flex justify-center mt-4">
+                  <div class="w-12 h-1 bg-gradient-to-r from-[#FFC86B] to-yellow-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="[grid-area:company] text-xl h-14 md:h-0 flex items-center">
-          {job.company}
-        </p>
-        <p class="[grid-area:position] text-xl">{job.position}</p>
-        <div class="[grid-area:slice] w-4/5 h-1 mx-auto my-6 md:w-1 md:h-14 md:mx-4 md:my-auto bg-white rounded" />
-        <div class="[grid-area:description]">
-          <p class="text-balance">{job.description}</p>
+      ))
+    }
+  </div>
+
+  <!-- Resumen de experiencia -->
+  <div class="max-w-4xl mx-auto mt-16">
+    <div class="bg-gradient-to-r from-[#FFC86B]/10 to-yellow-400/10 backdrop-blur-sm rounded-2xl p-8 border border-[#FFC86B]/20 text-center">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 bg-[#FFC86B] rounded-full shadow-lg shadow-[#FFC86B]/50"></div>
+          <span class="text-xl md:text-2xl text-gray-300">Experiencia total de trabajo</span>
+        </div>
+        <div class="text-3xl md:text-5xl font-bold text-[#FFC86B]">
+          {totalYears} {totalMonths}
         </div>
       </div>
-    ))
-  }
-
-  <!-- <div class="job items-center">
-		<div class="[grid-area:time]">
-			<p class="text-xl">2018 - 2022</p>
-			<p class="text-base">1 año</p>
-		</div>
-		<p class="[grid-area:company] text-xl">Dolore esse</p>
-		<p class="[grid-area:position] text-xl">Dolore esse aliquip non dolore</p>
-		<div class="[grid-area:slice] w-4/5 h-1 mx-auto my-2 md:w-1 md:h-14 md:mx-4 md:my-auto  bg-white rounded"></div>
-		<div class="[grid-area:description]">
-			<p class="text-balance">Esse quis laborum ipsum veniam nisi incididunt ipsum minim officia laboris aute amet. Dolore consequat eiusmod ea Lorem non ullamco velit ad cupidatat cillum. Eu incididunt duis ex ea qui proident aute.</p>
-		</div>
-	</div> -->
-
-  <div class="text-end mt-3">
-    <p class="text-2xl mr-12">Experiencia de trabajo</p>
-    <p class="text-4xl mt-1">{totalYears} {totalMonths}</p>
+    </div>
   </div>
 </Section>
 
-<style>
-  .job {
-    display: grid;
-    grid-template-columns: 10% 20% 20% auto 50%;
-    grid-template-rows: auto;
-    grid-template-areas: "time company position slice description";
-    gap: 8px;
-  }
 
-  @media (max-width: 776px) {
-    .job {
-      grid-template-columns: 1fr 30%;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas:
-        "company time"
-        "position time"
-        "description description"
-        "slice slice";
-      && .\[grid-area\:time\] {
-        align-self: start;
-      }
-    }
-  }
-</style>
