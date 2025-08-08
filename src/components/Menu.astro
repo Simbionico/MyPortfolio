@@ -86,10 +86,17 @@ import DownloadFile from "../icons/DownloadFile.astro";
       <a class="ml-5 my-auto vertical-text" href="#proyects">Proyectos</a>
       <a class="ml-5 my-auto vertical-text" href="#trajectory">Trayectoria</a>
       <a class="ml-5 my-auto vertical-text" href="#contact">Contactame</a>
-      <a class="ml-5 my-auto vertical-text" href="/posts/post-1">Blog</a>
+      <a class="ml-5 my-auto vertical-text" href="/blog">Blog</a>
     </nav>
     <div id="document" class="flex items-center">
-      <DownloadFile id="download-file" stroke="#FFC86B" />
+      <a
+        href="/CarlosCastellanosCV_v2.pdf"
+        download="Carlos_Castellanos_CV.pdf"
+        class="inline-flex items-center hover:scale-110 transition-transform duration-300"
+        title="Descargar CV"
+      >
+        <DownloadFile id="download-file" stroke="#FFC86B" />
+      </a>
     </div>
   </div>
 </div>
