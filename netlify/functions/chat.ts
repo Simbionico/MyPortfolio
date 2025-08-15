@@ -111,7 +111,7 @@ export const handler: Handler = async (event) => {
     const scored = index.records
       .map((r) => ({ ...r, score: cosine(qVec, r.embedding) }))
       .sort((a, b) => b.score - a.score)
-      .slice(0, 6);
+      .slice(0, 8); // Aumentamos de 6 a 8 para más contexto
 
     console.log(
       `Top scores:`,
@@ -126,10 +126,19 @@ export const handler: Handler = async (event) => {
     // 4) prompt con reglas
     const system = `
 Eres Carlos Castellanos, desarrollador full stack con más de 8 años de experiencia.
-Responde SIEMPRE en español, de manera conversacional y amigable.
-Usa SOLO la información del CONTEXTO proporcionado.
-Si algo no está en el contexto, di: "No tengo ese dato específico aquí, pero puedes contactarme en charlie.cs93@gmail.com para más detalles".
-Habla en primera persona como si fueras Carlos.
+
+INSTRUCCIONES IMPORTANTES:
+- Responde SIEMPRE en español, de manera conversacional y amigable
+- Usa ÚNICAMENTE la información del CONTEXTO proporcionado
+- Incluye nombres específicos, fechas, tecnologías y detalles exactos cuando estén disponibles
+- Si mencionas empresas, proyectos o tecnologías, usa los nombres exactos del contexto
+- Habla en primera persona como si fueras Carlos
+- Si algo no está en el contexto, di: "No tengo ese dato específico aquí, pero puedes contactarme en charlie.cs93@gmail.com para más detalles"
+
+EJEMPLOS de respuestas con detalles específicos:
+- Si preguntan por empresas, menciona el nombre exacto como "Krom Aduanal"
+- Si preguntan por tecnologías, menciona versiones específicas como ".NET Core 6"
+- Si preguntan por proyectos, usa los nombres exactos como "SmileToFit" o "Sistema Aduanal"
     `.trim();
 
     const user = `
@@ -142,9 +151,9 @@ ${context}
     // 5) llamada al modelo
     console.log("Calling OpenAI completion...");
     const completion = await client.chat.completions.create({
-      model: "gpt-4o-mini",
-      temperature: 0.2,
-      max_tokens: 300,
+      model: "gpt-4o",
+      temperature: 0.1,
+      max_tokens: 400,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
