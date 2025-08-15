@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Cabeza del robot Carlos">
+  <!-- Colores -->
+  <!-- dorado principal: #FFC86B , contorno oscuro: #6B3E2E, dorado oscuro: #e6a73d -->
+  <defs>
+    <style>
+      .fill-gold { fill: #FFC86B; }
+      .fill-gold-dark { fill: #e6a73d; }
+      .stroke-dark { stroke: #2d2d2d; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <!-- Transparente por defecto (sin fondo) -->
+  <!-- Antena -->
+  <g transform="translate(0,30)">
+    <rect x="246" y="28" width="20" height="82" rx="10" class="fill-gold stroke-dark" stroke-width="10"/>
+    <circle cx="256" cy="18" r="22" class="fill-gold stroke-dark" stroke-width="10"/>
+  </g>
+
+  <!-- Cabeza -->
+  <g>
+    <!-- cuerpo de la cabeza (forma redondeada) -->
+    <rect x="64" y="110" width="384" height="300" rx="90" class="fill-gold stroke-dark" stroke-width="20"/>
+    <!-- orejas/auriculares -->
+    <rect x="18" y="200" width="92" height="140" rx="40" class="fill-gold stroke-dark" stroke-width="18"/>
+    <rect x="402" y="200" width="92" height="140" rx="40" class="fill-gold stroke-dark" stroke-width="18"/>
+    <!-- ojos (estilo amigable) -->
+    <g fill="#2d2d2d">
+      <circle cx="180" cy="250" r="30" />
+      <circle cx="332" cy="250" r="30" />
+      <!-- brillo pequeño en cada ojo -->
+      <circle cx="168" cy="238" r="8" fill="#ffffff"/>
+      <circle cx="320" cy="238" r="8" fill="#ffffff"/>
+    </g>
+    <!-- sonrisa simple -->
+    <path d="M170 320 Q256 370 342 320" fill="none" class="stroke-dark" stroke-width="16" />
+    <!-- detalle interior (panel frontal opcional: sutil) -->
+
+  </g>
+</svg>
