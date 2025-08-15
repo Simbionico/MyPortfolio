@@ -3,10 +3,8 @@ import type { Handler } from "@netlify/functions";
 import fs from "fs";
 import path from "path";
 import OpenAI from "openai";
-import "dotenv/config";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-const INDEX_PATH = path.resolve("ai/index.json");
 
 // coseno entre dos vectores
 function cosine(a: number[], b: number[]) {
@@ -22,17 +20,67 @@ function cosine(a: number[], b: number[]) {
 }
 
 export const handler: Handler = async (event) => {
+  // Headers CORS
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  };
+
+  // Manejar preflight CORS
+  if (event.httpMethod === "OPTIONS") {
+    return { statusCode: 200, headers, body: "" };
+  }
+
   try {
     if (event.httpMethod !== "POST") {
-      return { statusCode: 405, body: "Method Not Allowed" };
+      return {
+        statusCode: 405,
+        headers,
+        body: JSON.stringify({ error: "Method Not Allowed" }),
+      };
     }
 
     const { message } = JSON.parse(event.body || "{}") as { message?: string };
     if (!message) {
-      return { statusCode: 400, body: "Missing 'message'" };
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Missing 'message'" }),
+      };
+    }
+
+    // Verificar API key
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("Missing OPENAI_API_KEY");
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          answer: "Error de configuración. Contacta a charlie.cs93@gmail.com",
+          sources: [],
+        }),
+      };
+    }
+
+    // Verificar archivo de embeddings
+    const INDEX_PATH = path.resolve("ai/index.json");
+    if (!fs.existsSync(INDEX_PATH)) {
+      console.error("Embeddings file not found:", INDEX_PATH);
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer:
+            "Hola! Soy Carlos Castellanos, desarrollador full stack con más de 8 años de experiencia en .NET Core, Python, AWS y automatización. ¿En qué te puedo ayudar?",
+          sources: [],
+        }),
+      };
     }
 
     // 1) embed del query
+    console.log("Generating embedding for:", message);
     const qEmb = await client.embeddings.create({
       model: "text-embedding-3-small",
       input: message,
@@ -40,6 +88,7 @@ export const handler: Handler = async (event) => {
     const qVec = qEmb.data[0].embedding;
 
     // 2) cargar índice y rankear
+    console.log("Loading embeddings index...");
     const index = JSON.parse(fs.readFileSync(INDEX_PATH, "utf8")) as {
       records: {
         id: string;
@@ -49,10 +98,17 @@ export const handler: Handler = async (event) => {
       }[];
     };
 
+    console.log(`Found ${index.records.length} records in index`);
+
     const scored = index.records
       .map((r) => ({ ...r, score: cosine(qVec, r.embedding) }))
       .sort((a, b) => b.score - a.score)
       .slice(0, 6);
+
+    console.log(
+      `Top scores:`,
+      scored.slice(0, 3).map((s) => s.score),
+    );
 
     // 3) armar contexto
     const context = scored
@@ -61,11 +117,11 @@ export const handler: Handler = async (event) => {
 
     // 4) prompt con reglas
     const system = `
-Eres el asistente del portafolio de Carlos Castellanos.
-Responde SIEMPRE en español, breve y directo.
-Usa SOLO la información del CONTEXTO. 
-Si algo no está en el contexto, di: "No tengo ese dato aquí, pero puedes contactarme en charlie.cs93@gmail.com".
-Cuando te pidan links del sitio, responde con rutas relativas si aplican.
+Eres Carlos Castellanos, desarrollador full stack con más de 8 años de experiencia.
+Responde SIEMPRE en español, de manera conversacional y amigable.
+Usa SOLO la información del CONTEXTO proporcionado.
+Si algo no está en el contexto, di: "No tengo ese dato específico aquí, pero puedes contactarme en charlie.cs93@gmail.com para más detalles".
+Habla en primera persona como si fueras Carlos.
     `.trim();
 
     const user = `
@@ -76,9 +132,11 @@ ${context}
     `.trim();
 
     // 5) llamada al modelo
+    console.log("Calling OpenAI completion...");
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.2,
+      max_tokens: 300,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -87,15 +145,15 @@ ${context}
 
     const answer =
       completion.choices[0]?.message?.content ?? "No pude generar respuesta.";
+
+    console.log("Generated answer:", answer.substring(0, 100) + "...");
+
     return {
       statusCode: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store",
-      },
+      headers,
       body: JSON.stringify({
         answer,
-        sources: scored.map((s) => ({
+        sources: scored.slice(0, 3).map((s) => ({
           id: s.id,
           source: s.source,
           score: Number(s.score.toFixed(3)),
@@ -103,7 +161,15 @@ ${context}
       }),
     };
   } catch (e: any) {
-    console.error(e);
-    return { statusCode: 500, body: "Server error" };
+    console.error("Error in chat function:", e);
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({
+        answer:
+          "Disculpa, hubo un error técnico. Soy Carlos Castellanos, desarrollador full stack. Puedes contactarme en charlie.cs93@gmail.com",
+        sources: [],
+      }),
+    };
   }
 };
