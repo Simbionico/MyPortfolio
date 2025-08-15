@@ -43,7 +43,7 @@ export default function Chat() {
         <div className="flex items-center justify-between p-4 border-b border-neutral-700">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <h3 className="text-white font-medium">Chat con Carlos</h3>
+            <h3 className="text-white font-medium">Simby</h3>
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -59,8 +59,8 @@ export default function Chat() {
           <div className="space-y-3 max-h-80 overflow-auto pr-1">
             {messages.length === 0 && (
               <div className="text-center text-neutral-400 text-sm py-8">
-                <div className="mb-2">👋 ¡Hola! Soy Carlos</div>
-                <div>Pregúntame sobre mi experiencia, proyectos o stack tecnológico</div>
+                <div className="mb-2">👋 ¡Hola! Soy Simby el asistente de Carlos</div>
+                <div>Puedes preguntarme sobre su experiencia, proyectos, stack tecnológico o sus gustos.</div>
               </div>
             )}
             {messages.map((m, i) => (
