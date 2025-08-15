@@ -68,6 +68,13 @@ export const handler: Handler = async (event) => {
     const INDEX_PATH = path.resolve("ai/index.json");
     if (!fs.existsSync(INDEX_PATH)) {
       console.error("Embeddings file not found:", INDEX_PATH);
+      console.error("Current working directory:", process.cwd());
+      console.error(
+        "Files in current dir:",
+        fs
+          .readdirSync(".")
+          .filter((f) => f.includes("ai") || f.includes("index")),
+      );
       return {
         statusCode: 200,
         headers,
@@ -78,6 +85,7 @@ export const handler: Handler = async (event) => {
         }),
       };
     }
+    console.info("Embeddings file found:", INDEX_PATH);
 
     // 1) embed del query
     console.log("Generating embedding for:", message);

@@ -8,7 +8,7 @@ import OpenAI from "openai";
 
 /** ====== Config por ENV (con valores por defecto) ====== */
 const KNOWLEDGE_DIR = path.resolve(process.env.KNOWLEDGE_DIR || "knowledge");
-const OUT_FILE = path.resolve(process.env.OUT_FILE || "ai/index.json");
+const OUT_FILE = path.resolve(process.env.OUT_FILE || "public/ai/index.json");
 
 const CHUNK_SIZE = Number(process.env.CHUNK_SIZE || 1000);
 const CHUNK_OVERLAP = Number(process.env.CHUNK_OVERLAP || 200);
