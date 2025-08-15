@@ -106,38 +106,6 @@ export default function Chat() {
         </div>
       </div>
 
-      {/* Speech Bubble - shown when chat is closed */}
-      {!isOpen && (
-        <div className="absolute bottom-16 right-2 mb-3 mr-1">
-          {/* Bubble container with beautiful gradient */}
-          <div className="relative bg-gradient-to-br from-[#FFC86B] via-[#ffb94d] to-[#e6a73d] text-neutral-900 px-5 py-3 rounded-2xl rounded-br-sm shadow-2xl border border-white/30 animate-bounce hover:animate-pulse transition-all duration-300">
-            {/* Subtle inner highlight */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/5 rounded-2xl rounded-br-sm pointer-events-none"></div>
-            
-            {/* Text content with better typography */}
-            <div className="relative text-sm font-bold whitespace-nowrap leading-tight tracking-wide drop-shadow-sm">
-              <div>HOLA SOY CARLOS</div>
-              <div>DÉJAME CONTARTE</div>
-              <div>MÁS DE MÍ</div>
-            </div>
-            
-            {/* Enhanced speech bubble tail */}
-            <div className="absolute bottom-0 right-2 transform translate-y-full">
-              {/* Outer shadow tail */}
-              <div className="absolute top-0 left-0 w-0 h-0 border-l-[16px] border-l-transparent border-t-[16px] border-t-black/10"></div>
-              {/* Main tail with gradient */}
-              <div className="relative w-0 h-0 border-l-[14px] border-l-transparent border-t-[14px] border-t-[#e6a73d]"></div>
-              <div className="absolute -top-[12px] left-[1px] w-0 h-0 border-l-[12px] border-l-transparent border-t-[12px] border-t-[#FFC86B]"></div>
-            </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-white/80 rounded-full animate-ping"></div>
-            <div className="absolute top-1 left-2 w-1 h-1 bg-white/60 rounded-full animate-pulse delay-500"></div>
-            <div className="absolute bottom-1 right-8 w-1 h-1 bg-white/40 rounded-full animate-pulse delay-1000"></div>
-          </div>
-        </div>
-      )}
-
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -150,11 +118,17 @@ export default function Chat() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <img 
-            src="/icons/chatbot_head.svg" 
-            alt="Chatbot Carlos" 
-            className="w-16 h-16 group-hover:animate-pulse transition-all duration-300 filter group-hover:brightness-110 group-hover:drop-shadow-lg"
-          />
+          <div className="relative">
+            {/* Pulse rings with slower, less frequent animations */}
+            <div className="absolute inset-0 rounded-full bg-[#FFC86B]/20 animate-ping" style={{animationDuration: '3s'}}></div>
+            <div className="absolute inset-0 rounded-full bg-[#FFC86B]/15 animate-pulse" style={{animationDuration: '4s', animationDelay: '1.5s'}}></div>
+            
+            <img 
+              src="/icons/chatbot_head.svg" 
+              alt="Chatbot Carlos" 
+              className="relative w-16 h-16 transition-all duration-300 filter group-hover:brightness-110 group-hover:drop-shadow-lg group-hover:animate-pulse z-10"
+            />
+          </div>
         )}
       </button>
     </div>
