@@ -60,7 +60,7 @@ export default function Chat() {
             {messages.length === 0 && (
               <div className="text-center text-neutral-400 text-sm py-8">
                 <div className="mb-2">👋 ¡Hola! Soy Simby el asistente de Carlos</div>
-                <div>Puedes preguntarme sobre su experiencia, proyectos, stack tecnológico o sus gustos.</div>
+                <div>Puedes preguntarme sobre su experiencia, proyectos, stack tecnológico.</div>
               </div>
             )}
             {messages.map((m, i) => (
