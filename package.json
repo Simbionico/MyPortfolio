@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "build:embeddings": "node --max-old-space-size=2048 --expose-gc --loader ts-node/esm scripts/build-embeddings.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.8.2",
